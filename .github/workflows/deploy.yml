@@ -21,8 +21,14 @@ jobs:
 
       - name: Print variable
         run: "echo ${{ secrets.TOKEN_SECRET }}"
+      
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: setup
+      - name: Setup
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
+      - name: Instalar dependencias
+        run: npm install
